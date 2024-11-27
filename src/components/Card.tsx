@@ -1,11 +1,12 @@
 import {
   Box,
   Heading,
-  Text,
   Image,
   Skeleton,
   SkeletonText,
+  Text // eslint-disable-line
 } from '@chakra-ui/react';
+
 import { useState } from 'react';
 
 interface Card {
@@ -25,12 +26,12 @@ export function Card({ data, viewImage }: CardProps): JSX.Element {
 
   return (
     <Box key={data.ts} borderRadius="md" bgColor="pGray.800">
-      <Skeleton isLoaded={!isLoading}>
+      <Skeleton w="full" isLoaded={!isLoading}>
         <Image
           src={data.url}
           alt={data.title}
           objectFit="cover"
-          w="max"
+          w="full"
           h={48}
           borderTopRadius="md"
           onClick={() => viewImage(data.url)}
