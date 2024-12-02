@@ -20,7 +20,7 @@ export default function Home(): JSX.Element {
   async function fetchImages({
     pageParam = null,
   }): Promise<{ after: string; data: Image[] }> {
-    const response = await api.get('http://localhost:3000/api/images', {
+    const response = await api.get('/api/images', {
       params: {
         after: pageParam,
       },
